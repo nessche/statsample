@@ -40,12 +40,14 @@ task "gettext:makemo" do
   # GetText.create_mofiles(true, "po", "locale")  # This is for "Ruby on Rails".
 end
 
+Hoe.plugin :gemspec
+Hoe.plugin :bundler
 h=Hoe.spec('statsample') do 
   self.version=Statsample::VERSION
   #self.testlib=:minitest
 	self.rubyforge_name = "ruby-statsample"
 	self.developer('Claudio Bustos', 'clbustos@gmail.com')
-	self.extra_deps << ["spreadsheet","~>0.6.5"] <<  ["reportbuilder", "~>1.4"] << ["minimization", "~>0.2.0"] << ["fastercsv", ">0"] << ["dirty-memoize", "~>0.0"] << ["extendmatrix","~>0.3.1"] << ["statsample-bivariate-extension", ">0"] << ["rserve-client", "~>0.2.5"] << ["rubyvis", "~>0.5"] << ["distribution", "~>0.6"]
+	self.extra_deps << ["spreadsheet","~>0.6.5"] <<  ["reportbuilder", "~>1.4"] << ["minimization", "~>0.2.0"] << ["fastercsv", ">0"] << ["dirty-memoize", "~>0.0"] << ["extendmatrix","~>0.3.1"] << ["statsample-bivariate-extension", ">0"] << ["rserve-client", "~>0.3.0"] << ["rubyvis", "~>0.5"] << ["distribution", "~>0.6"]
   
 	self.extra_dev_deps << ["hoe","~>0"] << ["shoulda","~>0"] << ["minitest", "~>2.0"] << ["rserve-client", "~>0"] << ["gettext", "~>0"] << ["mocha", "~>0"] << ["hoe-git", "~>0"]
   
